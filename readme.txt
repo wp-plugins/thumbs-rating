@@ -28,6 +28,7 @@ The output is very basic, no images, no fonts, no fancy CSS. Customize the ouput
 
 *	English
 *	Spanish (es_ES)
+* 	cs_CZ (by [togur](http://wordpress.org/support/profile/togur)
 
 = Requests =
 
