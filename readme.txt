@@ -39,9 +39,9 @@ I welcome any contributions to the plugin. At long as we keep it light and simpl
 
 Add some love on Github https://github.com/quicoto/thumbs-rating
 
-= Ping me =
+= Ping me / blame me =
 
-* [Follow me on Twitter: @ricard_dev](http://twitter.com/ricard_dev). 
+* Follow me on Twitter: [@ricard_dev](http://twitter.com/ricard_dev). 
 
 == Installation ==
 
@@ -58,6 +58,8 @@ add_filter('the_content', thumbs_rating_print);`
 B) Alternatively you can print the Thumbs in certain parts of your theme. Paste the following snippet wherever you want it to show:
 
 `<?=function_exists('thumbs_rating_getlink') ? thumbs_rating_getlink() : ''?>`
+
+__NOTE__: If you don't want to mess with php files you can use the [Code Snippets](http://wordpress.org/plugins/code-snippets/) plugin (or similar) which allows you to make these changes from within the WordPress Admin without editing your functions.php file.
 
 == Frequently Asked Questions ==
 
