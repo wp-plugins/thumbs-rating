@@ -27,8 +27,8 @@ The output is very basic, no images, no fonts, no fancy CSS. Customize the ouput
 = Languages =
 
 *	English
-*	Spanish (es_ES)
-* 	cs_CZ (by [togur](http://wordpress.org/support/profile/togur)
+*	es_ES
+* 	cs_CZ (by [togur](http://wordpress.org/support/profile/togur))
 
 = Requests =
 
@@ -42,7 +42,8 @@ Add some love on Github https://github.com/quicoto/thumbs-rating
 
 = Ping me / blame me =
 
-* Follow me on Twitter: [@ricard_dev](http://twitter.com/ricard_dev). 
+* Twitter: [@ricard_dev](http://twitter.com/ricard_dev). 
+* Blog: [CodeGround](http://php.quicoto.com/) 
 
 == Installation ==
 
