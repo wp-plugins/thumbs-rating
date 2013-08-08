@@ -20,6 +20,7 @@ The output is very basic, no images, no fonts, no fancy CSS. Customize the ouput
 = Features =
 
 *   Stores the votes values for each content.
+*   Uses HTML5 LocalStorage to prevent the users from voting twice.
 *   No output printed by default, check the Installation tab.
 *   Easy to customize the output using CSS.
 
@@ -71,6 +72,7 @@ Absolutely. Check out the CSS within the plugin (__thumbs-rating/css/style.css__
 == Screenshots ==
 
 1. Basic output with the default CSS with the TwentyThirteen theme.
+2. This text is shown if you try to vote again.
 
 == Changelog ==
 
