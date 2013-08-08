@@ -29,6 +29,8 @@ The output is very basic, no images, no fonts, no fancy CSS. Customize the ouput
 *	English
 *	Spanish: es_ES
 *	Catalan: ca
+*	German: de_DE
+*	French: fr_FR
 * 	Czech: cs_CZ (by [togur](http://wordpress.org/support/profile/togur))
 
 = Requests =
@@ -42,6 +44,8 @@ I welcome any contributions to the plugin. At long as we keep it light and simpl
 Add some love on Github https://github.com/quicoto/thumbs-rating
 
 = Ping me / blame me =
+
+Are you using the plugin? Let me know!
 
 * Twitter: [@ricard_dev](http://twitter.com/ricard_dev)
 * Blog: [CodeGround](http://php.quicoto.com/) 
