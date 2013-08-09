@@ -3,7 +3,7 @@ Contributors: quicoto
 Tags: ratings, thumbs, votes, AJAX, rating, thumb, vote, page, post
 Requires at least: 3.0
 Tested up to: 3.6
-Stable tag: 1.0
+Stable tag: 1.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -90,10 +90,16 @@ Absolutely. Check out the CSS within the plugin (__thumbs-rating/css/style.css__
 
 == Changelog ==
 
+= 1.1 =
+* Added French, Catalan, German and Czech.
+
 = 1.0 =
 * First release.
 
 == Upgrade Notice ==
+
+= 1.1 =
+Added French, Catalan, German and Czech.
 
 = 1.0 =
 First release, you'll love it.
