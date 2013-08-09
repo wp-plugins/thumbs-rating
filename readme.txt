@@ -24,6 +24,11 @@ The output is very basic, no images, no fonts, no fancy CSS. Customize the ouput
 *   No output printed by default, check the Installation tab.
 *   Easy to customize the output using CSS.
 
+= Roadmap = 
+
+*   Create shortcode (to use in Widgets, posts, pages...) to show the Top most positive voted posts.
+*   Add Admin columns to see votes from the post/page list. Also, be able to sort posts by votes.
+
 = Languages =
 
 *	English
