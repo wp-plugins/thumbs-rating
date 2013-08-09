@@ -159,3 +159,88 @@ if  ( ! function_exists( 'thumbs_rating_add_vote_callback' ) ):
 	add_action('wp_ajax_nopriv_thumbs_rating_add_vote', 'thumbs_rating_add_vote_callback');
 	
 endif;
+
+
+/*-----------------------------------------------------------------------------------*/
+/* Add Votes +/- columns to the Admin */
+/*-----------------------------------------------------------------------------------*/
+
+if  ( ! function_exists( 'thumbs_rating_columns' ) ): 
+	
+	function thumbs_rating_columns($columns)
+	{
+	    unset($columns['author']);
+	    return array_merge($columns, 
+	              array('thumbs_rating_up_count' =>  __( 'Up Votes', 'thumbs-rating' ),
+	                    'thumbs_rating_down_count' => __( 'Down Votes', 'thumbs-rating' )));
+	}
+	add_filter('manage_posts_columns' , 'thumbs_rating_columns');
+	add_filter('manage_pages_columns' , 'thumbs_rating_columns');
+
+endif;
+
+
+/*-----------------------------------------------------------------------------------*/
+/* Add Values to the new Admin columns */
+/*-----------------------------------------------------------------------------------*/
+
+if  ( ! function_exists( 'thumbs_rating_column_values' ) ): 	
+
+	function thumbs_rating_column_values( $column, $post_id ) {
+	    switch ( $column ) {
+		case 'thumbs_rating_up_count' :
+		   	echo get_post_meta($post_id, '_thumbs_rating_up', true) != '' ? "+" . get_post_meta($post_id, '_thumbs_rating_up', true) : '0';	
+		   break;
+	
+		case 'thumbs_rating_down_count' :
+		      echo get_post_meta($post_id, '_thumbs_rating_down', true) != '' ? "-" . get_post_meta($post_id, '_thumbs_rating_down', true) : '0';
+		    break;
+	    }
+	}
+	
+	add_action( 'manage_posts_custom_column' , 'thumbs_rating_column_values', 10, 2 );
+	add_action( 'manage_pages_custom_column' , 'thumbs_rating_column_values', 10, 2 );
+
+endif;
+
+
+/*-----------------------------------------------------------------------------------*/
+/* Indicate that our columns are sortable */
+/*-----------------------------------------------------------------------------------*/
+/*
+
+if  ( ! function_exists( 'thumb_rating_order_colum' ) ): 	
+
+	function thumb_rating_order_colum($columns) {
+	    	$columns['thumbs_rating_up_count']    = 'thumbs_rating_up_count';
+		$columns['thumbs_rating_down_count'] = 'thumbs_rating_down_count';
+		return $columns;
+	}
+	
+//	add_action( 'manage_edit-posts_sortable_columns', array( $this, 'thumb_rating_order_colum' ), 10, 2 );
+	add_action( 'manage_edit-posts_sortable_columns', array( $this, 'thumb_rating_order_colum' ), 10, 2 );
+
+endif;
+
+
+	function thumb_rating_orderby_colums( $vars ) {
+	
+		if ( isset( $vars['orderby'] ) && 'thumbs_rating_up_count' == $vars['orderby'] ) {
+			$vars = array_merge( $vars, array(
+				'meta_key' => '_thumbs_rating_up',
+				'orderby'  => 'meta_value_num'
+			) );
+		}
+	
+		if ( isset( $vars['orderby'] ) && 'thumbs_rating_down_count' == $vars['orderby'] ) {
+			$vars = array_merge( $vars, array(
+				'meta_key' => '_thumbs_rating_down',
+				'orderby'  => 'meta_value_num'
+			) );
+		}	
+
+		return $vars;
+	}
+
+	add_filter( 'request', array( $this, 'thumb_rating_orderby_colums' ) );
+*/
