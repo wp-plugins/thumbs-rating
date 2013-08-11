@@ -26,31 +26,24 @@ The output is very basic, no images, no fonts, no fancy CSS. Customize the ouput
 
 = Roadmap = 
 
-*   Create shortcode (to use in Widgets, posts, pages...) to show the Top most positive voted posts.
-*   Add Admin columns to see votes from the post/page list. Also, be able to sort posts by votes.
+*   Create shortcode (to use in Widgets, posts, pages...) to show the Top most positive/negative voted posts (filtered by category?)
 
 = Languages =
 
 *	English
 *	Spanish: es_ES
 *	Catalan: ca
-*	German: de_DE
-*	French: fr_FR
 * 	Czech: cs_CZ (by [togur](http://wordpress.org/support/profile/togur))
+
+Give me a hand and translate the plugin in your language, it's just a few words.
 
 = Requests =
 
 Feel free to post a request but let's keep it simple and light.
 
-= Patches are welcome =
+= Ping me / Blame me =
 
-I welcome any contributions to the plugin. At long as we keep it light and simple.
-
-Add some love on Github https://github.com/quicoto/thumbs-rating
-
-= Ping me / blame me =
-
-Are you using the plugin? Let me know!
+Are you using the plugin? Do you like it? Do you hate it? Let me know!
 
 * Twitter: [@ricard_dev](http://twitter.com/ricard_dev)
 * Blog: [CodeGround](http://php.quicoto.com/) 
@@ -83,12 +76,24 @@ You must specify where do you want to show the thumbs within your theme, check o
 
 Absolutely. Check out the CSS within the plugin (__thumbs-rating/css/style.css__) and override the classes from your theme __style.css__ file.
 
+= When I sort the admin columns some posts disappear =
+
+If the post/page has 0 votes for the column your trying to sort, WordPress hides it.
+
+It only shows the posts/pages with at least +1 or -1 votes.
+
+
 == Screenshots ==
 
 1. Basic output with the default CSS with the TwentyThirteen theme.
 2. This text is shown if you try to vote again.
 
 == Changelog ==
+
+= 1.2 =
+* Added "Up Votes" and "Down Votes" admin columns (they're shiny and sortable!)
+* Deleted translation for: German and French. I used Google Translator and they didn't look correct.
+* Updated translatations for: Spanish and Catalan.
 
 = 1.1 =
 * Added French, Catalan, German and Czech.
@@ -97,6 +102,9 @@ Absolutely. Check out the CSS within the plugin (__thumbs-rating/css/style.css__
 * First release.
 
 == Upgrade Notice ==
+
+= 1.2 =
+Added admin columns: now you can see the number of votes from your admin screen!
 
 = 1.1 =
 Added French, Catalan, German and Czech.

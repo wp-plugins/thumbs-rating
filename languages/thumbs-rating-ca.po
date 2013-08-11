@@ -21,3 +21,9 @@ msgstr "Votar Avall"
 
 msgid "You already voted!"
 msgstr "Ja has votat!"
+
+msgid "Up Votes"
+msgstr "Vots Positius"
+
+msgid "Down Votes"
+msgstr "Vots Negatius"

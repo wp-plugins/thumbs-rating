@@ -20,3 +20,9 @@ msgstr ""
 
 msgid "You already voted!"
 msgstr ""
+
+msgid "Up Votes"
+msgstr ""
+
+msgid "Down Votes"
+msgstr ""

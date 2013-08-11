@@ -205,42 +205,50 @@ endif;
 
 
 /*-----------------------------------------------------------------------------------*/
-/* Indicate that our columns are sortable */
+/* Make our columns are sortable */
 /*-----------------------------------------------------------------------------------*/
-/*
 
-if  ( ! function_exists( 'thumb_rating_order_colum' ) ): 	
+if  ( ! function_exists( 'thumbs_rating_sortable_columns' ) ): 	
 
-	function thumb_rating_order_colum($columns) {
-	    	$columns['thumbs_rating_up_count']    = 'thumbs_rating_up_count';
-		$columns['thumbs_rating_down_count'] = 'thumbs_rating_down_count';
+	function thumbs_rating_sortable_columns( $columns )
+	{
+		$columns[ 'thumbs_rating_up_count' ] = thumbs_rating_up_count;
+		$columns[ 'thumbs_rating_down_count' ] = thumbs_rating_down_count;
 		return $columns;
 	}
 	
-//	add_action( 'manage_edit-posts_sortable_columns', array( $this, 'thumb_rating_order_colum' ), 10, 2 );
-	add_action( 'manage_edit-posts_sortable_columns', array( $this, 'thumb_rating_order_colum' ), 10, 2 );
-
-endif;
-
-
-	function thumb_rating_orderby_colums( $vars ) {
 	
+	// Apply this to all public post types	
+
+	add_action( 'admin_init', 'thumbs_rating_sort_all_public_post_types' );		
+	
+	function thumbs_rating_sort_all_public_post_types() {
+
+		foreach ( get_post_types( array( 'public' => true ), 'names' ) as $post_type_name ) {
+			
+			add_action( 'manage_edit-' . $post_type_name . '_sortable_columns', 'thumbs_rating_sortable_columns' );			
+		}
+		
+		add_filter( 'request', 'thumbs_rating_column_sort_orderby' );
+	}
+	
+	// Tell WordPress our fields are numeric
+	
+	function thumbs_rating_column_sort_orderby( $vars ) {
+
 		if ( isset( $vars['orderby'] ) && 'thumbs_rating_up_count' == $vars['orderby'] ) {
 			$vars = array_merge( $vars, array(
 				'meta_key' => '_thumbs_rating_up',
 				'orderby'  => 'meta_value_num'
 			) );
 		}
-	
 		if ( isset( $vars['orderby'] ) && 'thumbs_rating_down_count' == $vars['orderby'] ) {
 			$vars = array_merge( $vars, array(
 				'meta_key' => '_thumbs_rating_down',
 				'orderby'  => 'meta_value_num'
 			) );
-		}	
-
+		}
 		return $vars;
 	}
-
-	add_filter( 'request', array( $this, 'thumb_rating_orderby_colums' ) );
-*/
+	
+endif;
