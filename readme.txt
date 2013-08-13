@@ -79,8 +79,15 @@ Absolutely. Check out the CSS within the plugin (__thumbs-rating/css/style.css__
 = When I sort the admin columns some posts disappear =
 
 If the post/page has 0 votes for the column your trying to sort, WordPress hides it.
-
 It only shows the posts/pages with at least +1 or -1 votes.
+
+= How do I show the number of votes in other parts of my theme? =
+
+Paste the following snippets inside the loop:
+
+`<?php $thumbs_rating_up_votes = get_post_meta(get_the_ID(), '_thumbs_rating_up'); print_r($thumbs_rating_up_votes[0]); ?>`
+
+`<?php $thumbs_rating_down_votes = get_post_meta(get_the_ID(), '_thumbs_rating_down'); print_r($thumbs_rating_down_votes[0]); ?>`
 
 
 == Screenshots ==
