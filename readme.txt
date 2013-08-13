@@ -3,7 +3,7 @@ Contributors: quicoto
 Tags: ratings, thumbs, votes, AJAX, rating, thumb, vote, page, post
 Requires at least: 3.0
 Tested up to: 3.6
-Stable tag: 1.2
+Stable tag: 1.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -97,6 +97,9 @@ Paste the following snippets inside the loop:
 
 == Changelog ==
 
+= 1.3 =
+* Added a CSS class to the button after voting and on page load. You can use it to style the button different so the users knows he already voted.  This feature does not apply the CSS class to old votes, just the new ones after updating to the 1.3 version.
+
 = 1.2 =
 * Added "Up Votes" and "Down Votes" admin columns (they're shiny and sortable!)
 * Deleted translation for: German and French. I used Google Translator and they didn't look correct.
@@ -109,6 +112,9 @@ Paste the following snippets inside the loop:
 * First release.
 
 == Upgrade Notice ==
+
+= 1.3 =
+You can style the buttons after clicking on them and after reloading the page.
 
 = 1.2 =
 Added admin columns: now you can see the number of votes from your admin screen!

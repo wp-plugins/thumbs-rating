@@ -4,7 +4,7 @@ Plugin Name: Thumbs Rating
 Plugin URI: http://wordpress.org/plugins/thumbs-rating/
 Description: Add thumbs up/down rating to your content.
 Author: Ricard Torres
-Version: 1.2
+Version: 1.3
 Author URI: http://php.quicoto.com/
 */
 
@@ -72,7 +72,7 @@ endif;
 
 if  ( ! function_exists( 'thumbs_rating_getlink' ) ): 
 
-	function thumbs_rating_getlink($post_ID = '')
+	function thumbs_rating_getlink($post_ID = '', $type_of_vote = '')
 	{
 		$thumbs_rating_link = "";
 		
@@ -80,9 +80,9 @@ if  ( ! function_exists( 'thumbs_rating_getlink' ) ):
 		
 		$thumbs_rating_up_count = get_post_meta($post_ID, '_thumbs_rating_up', true) != '' ? get_post_meta($post_ID, '_thumbs_rating_up', true) : '0';
 		$thumbs_rating_down_count = get_post_meta($post_ID, '_thumbs_rating_down', true) != '' ? get_post_meta($post_ID, '_thumbs_rating_down', true) : '0';
-		$link_up = '<span class="thumbs-rating-up" onclick="thumbs_rating_vote(' . $post_ID . ', 1);" data-text="' . __('Vote Up','thumbs-rating') . '"> +' . $thumbs_rating_up_count . '</span>';
-		 $link_down = '<span class="thumbs-rating-down" onclick="thumbs_rating_vote(' . $post_ID . ', 0);" data-text="' . __('Vote Down','thumbs-rating') . '"> -' . $thumbs_rating_down_count . '</span>';
-		$thumbs_rating_link = '<div  class="thumbs-rating-container" id="thumbs-rating-'.$post_ID.'">';
+		$link_up = '<span class="thumbs-rating-up'. ( (isset($type_of_vote) && ($type_of_vote == 1) ) ? ' thumbs-rating-voted' : '' ) .'" onclick="thumbs_rating_vote(' . $post_ID . ', 1);" data-text="' . __('Vote Up','thumbs-rating') . '"> +' . $thumbs_rating_up_count . '</span>';
+		$link_down = '<span class="thumbs-rating-down'. ( (isset($type_of_vote) && ($type_of_vote === 0) ) ? ' thumbs-rating-voted' : '' ) .'" onclick="thumbs_rating_vote(' . $post_ID . ', 0);" data-text="' . __('Vote Down','thumbs-rating') . '"> -' . $thumbs_rating_down_count . '</span>';
+		$thumbs_rating_link = '<div  class="thumbs-rating-container" id="thumbs-rating-'.$post_ID.'" data-content-id="'.$post_ID.'">';
 		$thumbs_rating_link .= $link_up;
 		$thumbs_rating_link .= ' ';
 		$thumbs_rating_link .= $link_down;
@@ -150,7 +150,7 @@ if  ( ! function_exists( 'thumbs_rating_add_vote_callback' ) ):
 		
 		update_post_meta($post_ID, $meta_name, $thumbs_rating_count);
 							
-		$results = thumbs_rating_getlink($post_ID);
+		$results = thumbs_rating_getlink($post_ID, $type_of_vote);
 
 		die($results);
 	}
@@ -251,4 +251,45 @@ if  ( ! function_exists( 'thumbs_rating_sortable_columns' ) ):
 		return $vars;
 	}
 	
+endif;
+
+
+/*-----------------------------------------------------------------------------------*/
+/* Print our JavaScript function in the footer. We want to check if the user has already voted on the page load */
+/*-----------------------------------------------------------------------------------*/
+
+if  ( ! function_exists( 'thumbs_rating_check' ) ): 	
+
+	function thumbs_rating_check(){ ?>
+	
+	<script>
+		jQuery(document).ready(function() {
+			
+			// Get all thumbs containers
+			jQuery( ".thumbs-rating-container" ).each(function( index ) {
+			 	
+			 	// Get data attribute
+			 	 var content_id = jQuery(this).data('content-id');
+			 	 
+			 	 var itemName = "thumbsrating"+content_id;			 	
+
+			 	      // Check if this content has localstorage
+			 	 	if (localStorage.getItem(itemName)){
+							
+						// Check if it's Up or Down vote
+						if ( localStorage.getItem("thumbsrating" + content_id + "-1") ){
+							jQuery(this).find('.thumbs-rating-up').addClass('thumbs-rating-voted');
+						}
+						if ( localStorage.getItem("thumbsrating" + content_id + "-0") ){
+							jQuery(this).find('.thumbs-rating-down').addClass('thumbs-rating-voted');
+						}
+					}
+			});			
+		});
+	</script>
+	
+	<?php } 
+	
+	add_action('wp_footer', 'thumbs_rating_check');
+
 endif;

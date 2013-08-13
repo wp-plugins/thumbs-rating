@@ -31,11 +31,27 @@ function thumbs_rating_vote(ID, type)
 			jQuery(object).removeClass('thumbs-rating-container');
 			jQuery(object).attr('id', '');
 			
+			// Add the class to the clicked element
+			
+			var new_container = '#thumbs-rating-' + ID;
+			
+			// Check the type
+			
+			if( type == 1){ thumbs_rating_class = ".thumbs-rating-up"; }
+			else{ thumbs_rating_class = ".thumbs-rating-down";  }
+			
+			jQuery(new_container +  thumbs_rating_class ).addClass('thumbs-rating-voted');
+			
 			// Set HTML5 LocalStorage so the user can not vote again unless he clears it.
 			
 			var itemName = "thumbsrating" + ID;
 			
 			localStorage.setItem(itemName, true);
+			
+			// Set the localStorage type as well
+			
+			var typeItemName = "thumbsrating" + ID + "-" + type;
+			localStorage.setItem(typeItemName, true);
 	
 		});
 	}else{
