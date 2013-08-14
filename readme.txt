@@ -58,7 +58,7 @@ A) If you want to show the thumbs after your content (posts, pages, custom post 
 {
 	return $content.thumbs_rating_getlink();
 }
-add_filter('the_content', thumbs_rating_print);`
+add_filter('the_content', 'thumbs_rating_print');`
 
 B) Alternatively you can print the Thumbs in certain parts of your theme. Paste the following snippet wherever you want it to show:
 

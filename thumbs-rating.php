@@ -8,6 +8,8 @@ Version: 1.3
 Author URI: http://php.quicoto.com/
 */
 
+if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
+
 /*-----------------------------------------------------------------------------------*/
 /* Define the URL and DIR path */
 /*-----------------------------------------------------------------------------------*/
@@ -45,7 +47,7 @@ if  ( ! function_exists( 'thumbs_rating_scripts' ) ):
 		wp_enqueue_script('thumbs_rating_scripts', thumbs_rating_url . '/js/general.js', array('jquery'));
 		wp_localize_script( 'thumbs_rating_scripts', 'thumbs_rating_ajax', array( 'ajax_url' => admin_url( 'admin-ajax.php' ) ) );
 	}
-	add_action('wp_enqueue_scripts', thumbs_rating_scripts);
+	add_action('wp_enqueue_scripts', 'thumbs_rating_scripts');
 
 endif;
 
@@ -74,6 +76,12 @@ if  ( ! function_exists( 'thumbs_rating_getlink' ) ):
 
 	function thumbs_rating_getlink($post_ID = '', $type_of_vote = '')
 	{
+	
+		// Sanatize params
+		
+		$post_ID = intval( sanitize_text_field( $post_ID ) );
+		$type_of_vote = intval ( sanitize_text_field( $type_of_vote ) );
+		
 		$thumbs_rating_link = "";
 		
 		if( $post_ID == '' ) $post_ID = get_the_ID();
@@ -81,7 +89,7 @@ if  ( ! function_exists( 'thumbs_rating_getlink' ) ):
 		$thumbs_rating_up_count = get_post_meta($post_ID, '_thumbs_rating_up', true) != '' ? get_post_meta($post_ID, '_thumbs_rating_up', true) : '0';
 		$thumbs_rating_down_count = get_post_meta($post_ID, '_thumbs_rating_down', true) != '' ? get_post_meta($post_ID, '_thumbs_rating_down', true) : '0';
 		$link_up = '<span class="thumbs-rating-up'. ( (isset($type_of_vote) && ($type_of_vote == 1) ) ? ' thumbs-rating-voted' : '' ) .'" onclick="thumbs_rating_vote(' . $post_ID . ', 1);" data-text="' . __('Vote Up','thumbs-rating') . '"> +' . $thumbs_rating_up_count . '</span>';
-		$link_down = '<span class="thumbs-rating-down'. ( (isset($type_of_vote) && ($type_of_vote === 0) ) ? ' thumbs-rating-voted' : '' ) .'" onclick="thumbs_rating_vote(' . $post_ID . ', 0);" data-text="' . __('Vote Down','thumbs-rating') . '"> -' . $thumbs_rating_down_count . '</span>';
+		$link_down = '<span class="thumbs-rating-down'. ( (isset($type_of_vote) && ($type_of_vote == 2) ) ? ' thumbs-rating-voted' : '' ) .'" onclick="thumbs_rating_vote(' . $post_ID . ', 2);" data-text="' . __('Vote Down','thumbs-rating') . '"> -' . $thumbs_rating_down_count . '</span>';
 		$thumbs_rating_link = '<div  class="thumbs-rating-container" id="thumbs-rating-'.$post_ID.'" data-content-id="'.$post_ID.'">';
 		$thumbs_rating_link .= $link_up;
 		$thumbs_rating_link .= ' ';
@@ -107,7 +115,7 @@ if  ( ! function_exists( 'thumbs_rating_print' ) ):
 	{
 		return $content.thumbs_rating_getlink();
 	}
-	add_filter('the_content', thumbs_rating_print);
+	add_filter('the_content', 'thumbs_rating_print');
 
 endif;
 */
@@ -131,13 +139,13 @@ if  ( ! function_exists( 'thumbs_rating_add_vote_callback' ) ):
 		
 		// Check the type and retrieve the meta values
 		
-		if ( $type_of_vote == 0 ){
-		
-			$meta_name = "_thumbs_rating_down";
-			
-		}elseif( $type_of_vote == 1){
+		if ( $type_of_vote == 1 ){
 		
 			$meta_name = "_thumbs_rating_up";
+			
+		}elseif( $type_of_vote == 2){	
+			
+			$meta_name = "_thumbs_rating_down";
 		
 		}
 	
