@@ -3,7 +3,7 @@ Contributors: quicoto
 Tags: ratings, thumbs, votes, AJAX, rating, thumb, vote, page, post
 Requires at least: 3.0
 Tested up to: 3.6
-Stable tag: 1.3
+Stable tag: 1.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -98,6 +98,11 @@ Paste the following snippets inside the loop:
 
 == Changelog ==
 
+= 1.4 =
+* Improved security: prevent access to the file outside WordPress.
+* Improved security: sanatize the parameters we receive from the JavaScript.
+* Added two functions to print the thumbs values in your theme.
+
 = 1.3 =
 * Added a CSS class to the button after voting and on page load. You can use it to style the button different so the users knows he already voted.  This feature does not apply the CSS class to old votes, just the new ones after updating to the 1.3 version.
 
@@ -113,6 +118,9 @@ Paste the following snippets inside the loop:
 * First release.
 
 == Upgrade Notice ==
+
+= 1.4 =
+Security update, please read the changelog.
 
 = 1.3 =
 You can style the buttons after clicking on them and after reloading the page.
