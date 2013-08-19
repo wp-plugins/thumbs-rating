@@ -85,9 +85,9 @@ It only shows the posts/pages with at least +1 or -1 votes.
 
 Paste the following snippets inside the loop:
 
-`<?php echo thumbs_rating_show_up_votes() ?>`
+`<?=function_exists('thumbs_rating_show_up_votes') ? thumbs_rating_show_up_votes() : ''?>`
 
-`<?php echo thumbs_rating_show_down_votes() ?>`
+`<?=function_exists('thumbs_rating_show_down_votes') ? thumbs_rating_show_down_votes() : ''?>`
 
 (Both functions accept the post ID as a parameter in case you need it)
 
