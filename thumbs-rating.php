@@ -301,3 +301,39 @@ if  ( ! function_exists( 'thumbs_rating_check' ) ):
 	add_action('wp_footer', 'thumbs_rating_check');
 
 endif;
+
+
+/*-----------------------------------------------------------------------------------*/
+/* Two functions to show the ratings values in your theme */
+/*-----------------------------------------------------------------------------------*/
+
+if  ( ! function_exists( 'thumbs_rating_show_up_votes' ) ): 	
+	function thumbs_rating_show_up_votes ( $post_id = "") {
+	
+		   if( $post_id == "" ){
+		   	
+		   	$post_id = get_the_ID();
+		   }else{
+		   	
+		   	$post_id = intval( sanitize_text_field( $post_id ) );
+		   }
+		    
+		    return get_post_meta($post_id, '_thumbs_rating_up', true) != '' ? get_post_meta($post_id, '_thumbs_rating_up', true) : '0';	
+	}
+endif;
+
+if  ( ! function_exists( 'thumbs_rating_show_down_votes' ) ): 	
+	function thumbs_rating_show_down_votes ( $post_id = "") {
+	
+		   if( $post_id == "" ){
+		   	
+		   	$post_id = get_the_ID();
+		   }else{
+		   	
+		   	$post_id = intval( sanitize_text_field( $post_id ) );
+		   }
+		    
+		    return get_post_meta($post_id, '_thumbs_rating_down', true) != '' ? get_post_meta($post_id, '_thumbs_rating_down', true) : '0';	
+	}
+endif;
+
