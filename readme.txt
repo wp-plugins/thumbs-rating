@@ -33,8 +33,8 @@ The output is very basic, no images, no fonts, no fancy CSS. Customize the ouput
 *	English
 *	Spanish: es_ES
 *	Catalan: ca
-* 	Czech: cs_CZ (by [togur](http://wordpress.org/support/profile/togur))
-* 	German: de_DE
+* 	Czech: cs_CZ (by [togur](http://wordpress.org/support/profile/togur/))
+* 	German: de_DE (by [webserviceXXL](http://profiles.wordpress.org/hvbx/))
 
 Give me a hand and translate the plugin in your language, it's just a few words.
 
