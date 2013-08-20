@@ -220,8 +220,8 @@ if  ( ! function_exists( 'thumbs_rating_sortable_columns' ) ):
 
 	function thumbs_rating_sortable_columns( $columns )
 	{
-		$columns[ 'thumbs_rating_up_count' ] = thumbs_rating_up_count;
-		$columns[ 'thumbs_rating_down_count' ] = thumbs_rating_down_count;
+		$columns[ 'thumbs_rating_up_count' ] = 'thumbs_rating_up_count';
+		$columns[ 'thumbs_rating_down_count' ] = 'thumbs_rating_down_count';
 		return $columns;
 	}
 	
