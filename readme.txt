@@ -34,6 +34,7 @@ The output is very basic, no images, no fonts, no fancy CSS. Customize the ouput
 *	Spanish: es_ES
 *	Catalan: ca
 * 	Czech: cs_CZ (by [togur](http://wordpress.org/support/profile/togur))
+* 	German: de_DE
 
 Give me a hand and translate the plugin in your language, it's just a few words.
 
@@ -97,6 +98,10 @@ Paste the following snippets inside the loop:
 2. This text is shown if you try to vote again.
 
 == Changelog ==
+
+= 1.5 =
+* Fixed warning in the Admin (only when WP_DEBUG = true).
+* Added German de_DE translation.
 
 = 1.4 =
 * Improved security: prevent access to the file outside WordPress.
