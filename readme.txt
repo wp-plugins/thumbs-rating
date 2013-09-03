@@ -3,7 +3,7 @@ Contributors: quicoto
 Tags: ratings, thumbs, votes, AJAX, rating, thumb, vote, page, post
 Requires at least: 3.0
 Tested up to: 3.6
-Stable tag: 1.4
+Stable tag: 1.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -13,7 +13,7 @@ Thumbs Rating does what you'd expect. It allows you to add a thumbs up/down to y
 
 I needed a simple and light plugin to add Thumbs Rating, I couldn't find any so I built my own.
 
-This plugin allows you to add a thumb up/down rating to your content. You can set it up to show anywhere you want, check the Installation tab.
+This plugin allows you to add a thumb up/down rating to your content. You can set it up to show anywhere you want, check out the Installation tab.
 
 The output is very basic, no images, no fonts, no fancy CSS. Customize the ouput overriding the CSS classes in your __style.css__ file.
 
@@ -23,10 +23,7 @@ The output is very basic, no images, no fonts, no fancy CSS. Customize the ouput
 *   Uses HTML5 LocalStorage to prevent the users from voting twice.
 *   No output printed by default, check the Installation tab.
 *   Easy to customize the output using CSS.
-
-= Roadmap = 
-
-*   Create shortcode (to use in Widgets, posts, pages...) to show the Top most positive/negative voted posts (filtered by category?)
+*   Show the most voted (positive/negative) items using a shortcode.
 
 = Languages =
 
@@ -92,6 +89,20 @@ Paste the following snippets inside the loop:
 
 (Both functions accept the post ID as a parameter in case you need it)
 
+= Shortcode =
+
+The shortcode [thumbs_rating_top] accept the following parameters:
+
+*	type: positive (default) / negative
+*	posts_per_page: 5 (default)
+*	category: ID (default = all)
+* 	show_votes: yes (default) / no
+* 	post_type: any (default) / post / page / books
+
+Here's an example using some parameters:
+
+`[thumbs_rating_top posts_per_page="10" post_type="page" show_votes="no"] `
+
 == Screenshots ==
 
 1. Basic output with the default CSS with the TwentyThirteen theme.
@@ -100,6 +111,7 @@ Paste the following snippets inside the loop:
 == Changelog ==
 
 = 1.5 =
+* Added a shortcode to show the most voted items.
 * Fixed warning in the Admin (only when WP_DEBUG = true).
 * Added German de_DE translation.
 
@@ -123,6 +135,9 @@ Paste the following snippets inside the loop:
 * First release.
 
 == Upgrade Notice ==
+
+= 1.5 =
+Shortocode, Admin Warning and Translations.
 
 = 1.4 =
 Security update, please read the changelog.

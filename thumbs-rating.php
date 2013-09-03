@@ -4,7 +4,7 @@ Plugin Name: Thumbs Rating
 Plugin URI: http://wordpress.org/plugins/thumbs-rating/
 Description: Add thumbs up/down rating to your content.
 Author: Ricard Torres
-Version: 1.4
+Version: 1.5
 Author URI: http://php.quicoto.com/
 */
 
@@ -337,3 +337,86 @@ if  ( ! function_exists( 'thumbs_rating_show_down_votes' ) ):
 	}
 endif;
 
+
+/*-----------------------------------------------------------------------------------*/
+/* Top Votes Shortcode [thumbs_rating_top] */
+/*-----------------------------------------------------------------------------------*/
+
+if  ( ! function_exists( 'thumbs_rating_top_func' ) ): 	
+	function thumbs_rating_top_func( $atts ) {
+	
+		$return = '';
+	
+		// Parameters accepted
+		
+		extract( shortcode_atts( array(
+			'type' => 'positive',
+			'posts_per_page' => 5,
+			'category' => '',
+			'show_votes' => 'yes',
+			'post_type' => 'any'
+		), $atts ) );
+		
+		// Check wich meta_key the user wants
+		
+		if( $type == 'positive' ){ $meta_key = '_thumbs_rating_up'; $sign = "+"; }
+		else{ $meta_key = '_thumbs_rating_down'; $sign = "-"; }
+		
+		// Build up the args array
+	
+	    $args = array (
+	    	'post_type' 			 => $post_type,
+			'post_status'            => 'publish',
+			'cat'                    => $category,
+			'pagination'             => false,
+			'posts_per_page'         => $posts_per_page,
+			'cache_results'          => true,
+			'meta_key'	=> $meta_key,
+			'orderby'	=> 'meta_value'
+		);
+		
+		// Get the posts
+				
+		$thumbs_ratings_top_query = new WP_Query($args);
+		
+		// Build the post list
+		
+		if($thumbs_ratings_top_query->have_posts()) : 		
+			
+			$return .= '<ol class="thumbs-rating-top-list">';
+			
+			while($thumbs_ratings_top_query->have_posts()){
+			
+				$thumbs_ratings_top_query->the_post(); 
+			
+				$return .= '<li>';
+				
+				$return .= '<a href="' . get_permalink() . '">' . get_the_title() . '</a>';				
+			
+				if( $show_votes == "yes" ){
+				
+					// Get the votes
+
+					$meta_values = get_post_meta(get_the_ID(), $meta_key);
+									
+					// Add the votes to the HTML
+					
+					if( sizeof($meta_values) > 0) $return .= ' (' . $sign . ' ' . $meta_values[0] . ')';
+				}
+				
+				$return .= '</li>';					
+			}
+			
+			$return .= '</ol>';
+			
+			// Reset the post data or the sky will fall
+			
+			wp_reset_postdata();
+			
+		endif; 
+		
+		return $return;
+	}
+	
+	add_shortcode( 'thumbs_rating_top', 'thumbs_rating_top_func' );
+endif;
