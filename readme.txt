@@ -2,8 +2,8 @@
 Contributors: quicoto
 Tags: ratings, thumbs, votes, AJAX, rating, thumb, vote, page, post
 Requires at least: 3.0
-Tested up to: 3.6
-Stable tag: 1.5
+Tested up to: 3.7
+Stable tag: 1.5.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -32,6 +32,7 @@ The output is very basic, no images, no fonts, no fancy CSS. Customize the ouput
 *	Catalan: ca
 * 	Czech: cs_CZ (by [togur](http://wordpress.org/support/profile/togur/))
 * 	German: de_DE (by [webserviceXXL](http://profiles.wordpress.org/hvbx/))
+*	Persian: fa_IR (by [Hamed.T](http://wordpress.org/support/profile/hamedt))
 
 Give me a hand and translate the plugin in your language, it's just a few words.
 
@@ -110,6 +111,9 @@ Here's an example using some parameters:
 
 == Changelog ==
 
+= 1.5.1 =
+* Added Persian (fa_IR) translation.
+
 = 1.5 =
 * Added a shortcode to show the most voted items.
 * Fixed warning in the Admin (only when WP_DEBUG = true).
@@ -135,6 +139,9 @@ Here's an example using some parameters:
 * First release.
 
 == Upgrade Notice ==
+
+= 1.5.1 =
+Added Persian translation.
 
 = 1.5 =
 Shortocode, Admin Warning and Translations.
