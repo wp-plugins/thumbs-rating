@@ -45,7 +45,7 @@ Feel free to post a request but let's keep it simple and light.
 Are you using the plugin? Do you like it? Do you hate it? Let me know!
 
 * Twitter: [@ricard_dev](http://twitter.com/ricard_dev)
-* Blog: [CodeGround](http://php.quicoto.com/) 
+* Blog: [Rick's code](http://php.quicoto.com/) 
 
 == Installation ==
 
