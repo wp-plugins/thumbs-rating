@@ -13,7 +13,7 @@ Thumbs Rating does what you'd expect. It allows you to add a thumbs up/down to y
 
 I needed a simple and light plugin to add Thumbs Rating, I couldn't find any so I built my own.
 
-This plugin allows you to add a thumb up/down rating to your content. You can set it up to show anywhere you want, check out the Installation tab.
+This plugin allows you to add a thumb up/down rating to your content. You can set it up to show anywhere you want, check out the Installation instructions.
 
 The output is very basic, no images, no fonts, no fancy CSS. Customize the ouput overriding the CSS classes in your __style.css__ file.
 
@@ -21,9 +21,9 @@ The output is very basic, no images, no fonts, no fancy CSS. Customize the ouput
 
 *   Stores the votes values for each content.
 *   Uses HTML5 LocalStorage to prevent the users from voting twice.
-*   No output printed by default, check the Installation tab.
+*   No output printed by default, check the Installation instructions.
 *   Easy to customize the output using CSS.
-*   Show the most voted (positive/negative) items using a shortcode.
+*   Show the most voted (positive/negative) items using shortcodes.
 
 = Languages =
 
@@ -45,7 +45,7 @@ Feel free to post a request but let's keep it simple and light.
 Are you using the plugin? Do you like it? Do you hate it? Let me know!
 
 * Twitter: [@ricard_dev](http://twitter.com/ricard_dev)
-* Blog: [CodeGround](http://php.quicoto.com/) 
+* Blog: [Rick's code](http://php.quicoto.com/) 
 
 == Installation ==
 
