@@ -3,7 +3,7 @@ Contributors: quicoto
 Tags: ratings, thumbs, votes, AJAX, rating, thumb, vote, page, post
 Requires at least: 3.0
 Tested up to: 3.8
-Stable tag: 1.5.1
+Stable tag: 1.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -99,6 +99,7 @@ The shortcode [thumbs_rating_top] accept the following parameters:
 *	category: ID (default = all)
 * 	show_votes: yes (default) / no
 * 	post_type: any (default) / post / page / books
+* 	show_both: no (default) / yes
 
 Here's an example using some parameters:
 
@@ -110,6 +111,9 @@ Here's an example using some parameters:
 2. This text is shown if you try to vote again.
 
 == Changelog ==
+
+= 1.6 =
+* Added a new optional parameter to the shortcode: show_both="yes"
 
 = 1.5.1 =
 * Added Persian (fa_IR) translation.

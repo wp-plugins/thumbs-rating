@@ -354,13 +354,25 @@ if  ( ! function_exists( 'thumbs_rating_top_func' ) ):
 			'posts_per_page' => 5,
 			'category' => '',
 			'show_votes' => 'yes',
-			'post_type' => 'any'
+			'post_type' => 'any',
+			'show_both' => 'no'
 		), $atts ) );
 		
 		// Check wich meta_key the user wants
 		
-		if( $type == 'positive' ){ $meta_key = '_thumbs_rating_up'; $sign = "+"; }
-		else{ $meta_key = '_thumbs_rating_down'; $sign = "-"; }
+		if( $type == 'positive' ){ 
+
+				$meta_key = '_thumbs_rating_up';
+				$other_meta_key = '_thumbs_rating_down';
+				$sign = "+";
+				$other_sign = "-"; 
+		}
+		else{ 
+				$meta_key = '_thumbs_rating_down';
+				$other_meta_key = '_thumbs_rating_up';
+				$sign = "-"; 
+				$other_sign = "+"; 
+		}
 		
 		// Build up the args array
 	
@@ -399,13 +411,44 @@ if  ( ! function_exists( 'thumbs_rating_top_func' ) ):
 
 					$meta_values = get_post_meta(get_the_ID(), $meta_key);
 									
-					// Add the votes to the HTML
-					
-					if( sizeof($meta_values) > 0) $return .= ' (' . $sign . ' ' . $meta_values[0] . ')';
+					// Add the votes to the HTML				
+
+						$return .= ' (' . $sign;
+
+						if( sizeof($meta_values) > 0){
+
+							$return .= $meta_values[0];	
+
+						}else{
+
+							$return .= "0";	
+						}						
+
+						// Show the other votes if needed
+						
+						if( $show_both == 'yes' ){
+
+							$other_meta_values = get_post_meta(get_the_ID(), $other_meta_key);
+
+							$return .= " " . $other_sign;
+							
+							if( sizeof($other_meta_values) > 0){
+								
+								$return .= $other_meta_values[0];
+								
+							}else{
+								
+								$return .= "0";
+							}
+						}
+
+						$return .= ')';
+							
+					}
 				}
 				
 				$return .= '</li>';					
-			}
+	
 			
 			$return .= '</ol>';
 			
