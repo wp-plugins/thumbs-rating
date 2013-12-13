@@ -102,7 +102,7 @@ The shortcode [thumbs_rating_top] accept the following parameters:
 
 Here's an example using some parameters:
 
-`[thumbs_rating_top type="positive" posts_per_page="10" post_type="page" show_votes="no"] `
+`[thumbs_rating_top type="positive" posts_per_page="10" post_type="post" show_votes="no"] `
 
 == Screenshots ==
 
