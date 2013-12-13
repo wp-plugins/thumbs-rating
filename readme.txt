@@ -144,6 +144,9 @@ Here's an example using some parameters:
 
 == Upgrade Notice ==
 
+= 1.6 =
+* Added a new optional parameter to the shortcode: show_both="yes"
+
 = 1.5.1 =
 Added Persian translation.
 
