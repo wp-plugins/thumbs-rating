@@ -4,9 +4,15 @@ function thumbs_rating_vote(ID, type)
 	
 	var itemName = "thumbsrating" + ID;
 	
+	var container = '#thumbs-rating-' + ID;
+	
 	// Check if the LocalStorage value exist. If do nothing.
 	
 	if (!localStorage.getItem(itemName)){
+	
+		// Prevent accidental (or intentional) multi-clicks
+		
+		jQuery( container + ' .thumbs-rating-up, ' + container + ' .thumbs-rating-down').removeAttr('onclick');
 	
 		// Data for the Ajax Request
 		
@@ -16,9 +22,7 @@ function thumbs_rating_vote(ID, type)
 			type: type
 		};
 			
-		jQuery.post(thumbs_rating_ajax.ajax_url, data, function(response) {
-	
-			var container = '#thumbs-rating-' + ID;
+		jQuery.post(thumbs_rating_ajax.ajax_url, data, function(response) {			
 			
 			var object = jQuery(container);
 			

@@ -44,7 +44,7 @@ if  ( ! function_exists( 'thumbs_rating_scripts' ) ):
 	
 	function thumbs_rating_scripts()
 	{
-		wp_enqueue_script('thumbs_rating_scripts', thumbs_rating_url . '/js/general.js', array('jquery'));
+		wp_enqueue_script('thumbs_rating_scripts', thumbs_rating_url . '/js/general.js', array('jquery'), '4.0.0');
 		wp_localize_script( 'thumbs_rating_scripts', 'thumbs_rating_ajax', array( 'ajax_url' => admin_url( 'admin-ajax.php' ) ) );
 	}
 	add_action('wp_enqueue_scripts', 'thumbs_rating_scripts');
