@@ -3,7 +3,7 @@ Contributors: quicoto
 Tags: ratings, thumbs, votes, AJAX, rating, thumb, vote, page, post
 Requires at least: 3.0
 Tested up to: 3.8
-Stable tag: 1.7
+Stable tag: 1.7.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -112,6 +112,9 @@ Here's an example using some parameters:
 
 == Changelog ==
 
+= 1.7.1 =
+* Improved the code to prevent multiple clicks. No DOM manipulation. Props @medariox and @ocean90
+
 = 1.7 =
 * Prevent the user from clicking multiple times, props @thequicksilver
 
@@ -146,6 +149,9 @@ Here's an example using some parameters:
 * First release.
 
 == Upgrade Notice ==
+
+= 1.7.1 =
+* Improved the code to prevent multiple clicks.
 
 = 1.7 =
 * Prevent the user from clicking multiple times
