@@ -10,9 +10,14 @@ function thumbs_rating_vote(ID, type)
 	
 	if (!localStorage.getItem(itemName)){
 	
-		// Prevent accidental (or intentional) multi-clicks
-		
-		jQuery( container + ' .thumbs-rating-up, ' + container + ' .thumbs-rating-down').removeAttr('onclick');
+		// Set HTML5 LocalStorage so the user can not vote again unless he clears it.
+                                               
+        localStorage.setItem(itemName, true);
+
+        // Set the localStorage type as well
+			
+		var typeItemName = "thumbsrating" + ID + "-" + type;
+		localStorage.setItem(typeItemName, true);
 	
 		// Data for the Ajax Request
 		
@@ -45,17 +50,6 @@ function thumbs_rating_vote(ID, type)
 			else{ thumbs_rating_class = ".thumbs-rating-down";  }
 			
 			jQuery(new_container +  thumbs_rating_class ).addClass('thumbs-rating-voted');
-			
-			// Set HTML5 LocalStorage so the user can not vote again unless he clears it.
-			
-			var itemName = "thumbsrating" + ID;
-			
-			localStorage.setItem(itemName, true);
-			
-			// Set the localStorage type as well
-			
-			var typeItemName = "thumbsrating" + ID + "-" + type;
-			localStorage.setItem(typeItemName, true);
 	
 		});
 	}else{
