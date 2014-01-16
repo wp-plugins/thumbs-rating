@@ -154,6 +154,9 @@ Here's an example using some parameters:
 
 == Upgrade Notice ==
 
+= 1.7.2 =
+* Added Russian (ru_RU) translation.
+
 = 1.7.1 =
 * Improved the code to prevent multiple clicks.
 
