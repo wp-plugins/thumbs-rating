@@ -3,7 +3,7 @@ Contributors: quicoto
 Tags: ratings, thumbs, votes, AJAX, rating, thumb, vote, page, post
 Requires at least: 3.0
 Tested up to: 3.8
-Stable tag: 1.7.1
+Stable tag: 1.7.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -33,6 +33,7 @@ The output is very basic, no images, no fonts, no fancy CSS. Customize the ouput
 * 	Czech: cs_CZ (by [togur](http://wordpress.org/support/profile/togur/))
 * 	German: de_DE (by [webserviceXXL](http://profiles.wordpress.org/hvbx/))
 *	Persian: fa_IR (by [Hamed.T](http://wordpress.org/support/profile/hamedt))
+*	Russian: ru_RU (by [anatolt](http://wordpress.org/support/profile/anatolt))
 
 Give me a hand and translate the plugin in your language, it's just a few words.
 
@@ -111,6 +112,9 @@ Here's an example using some parameters:
 2. This text is shown if you try to vote again.
 
 == Changelog ==
+
+= 1.7.2 =
+* Added Russian (ru_RU) translation.
 
 = 1.7.1 =
 * Improved the code to prevent multiple clicks. No DOM manipulation. Props @medariox and @ocean90
