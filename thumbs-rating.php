@@ -4,7 +4,7 @@ Plugin Name: Thumbs Rating
 Plugin URI: http://wordpress.org/plugins/thumbs-rating/
 Description: Add thumbs up/down rating to your content.
 Author: Ricard Torres
-Version: 1.7.2
+Version: 1.7.3
 Author URI: http://php.quicoto.com/
 */
 
@@ -384,7 +384,7 @@ if  ( ! function_exists( 'thumbs_rating_top_func' ) ):
 			'posts_per_page'         => $posts_per_page,
 			'cache_results'          => true,
 			'meta_key'	=> $meta_key,
-			'orderby'	=> 'meta_value'
+			'orderby'	=> 'meta_value_num'
 		);
 		
 		// Get the posts
