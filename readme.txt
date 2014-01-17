@@ -3,7 +3,7 @@ Contributors: quicoto
 Tags: ratings, thumbs, votes, AJAX, rating, thumb, vote, page, post
 Requires at least: 3.0
 Tested up to: 3.8
-Stable tag: 1.7.2
+Stable tag: 1.7.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -117,6 +117,9 @@ You might need to allow shortcodes in that sections, [here's how](http://php.qui
 
 == Changelog ==
 
+= 1.7.3 =
+* Fixed bug with the shortcode ordenation.
+
 = 1.7.2 =
 * Added Russian (ru_RU) translation.
 
@@ -157,6 +160,9 @@ You might need to allow shortcodes in that sections, [here's how](http://php.qui
 * First release.
 
 == Upgrade Notice ==
+
+= 1.7.3 =
+* Fixed bug with the shortcode ordenation.
 
 = 1.7.2 =
 * Added Russian (ru_RU) translation.
