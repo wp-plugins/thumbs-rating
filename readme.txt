@@ -118,7 +118,7 @@ You might need to allow shortcodes in that sections, [here's how](http://php.qui
 == Changelog ==
 
 = 1.7.3 =
-* Fixed bug with the shortcode ordenation.
+* Fixed bug with the shortcode ordering.
 
 = 1.7.2 =
 * Added Russian (ru_RU) translation.
@@ -162,7 +162,7 @@ You might need to allow shortcodes in that sections, [here's how](http://php.qui
 == Upgrade Notice ==
 
 = 1.7.3 =
-* Fixed bug with the shortcode ordenation.
+* Fixed bug with the shortcode ordering.
 
 = 1.7.2 =
 * Added Russian (ru_RU) translation.
