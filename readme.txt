@@ -106,6 +106,10 @@ Here's an example using some parameters:
 
 `[thumbs_rating_top type="positive" posts_per_page="10" post_type="post" show_votes="no"] `
 
+= The shortcode in Widgets or Comments doesn't work =
+
+You might need to allow shortcodes in that sections, [here's how](http://php.quicoto.com/how-to-allow-shortcodes-to-wordpress-comments/).
+
 == Screenshots ==
 
 1. Basic output with the default CSS with the TwentyThirteen theme.
