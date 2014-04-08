@@ -3,7 +3,7 @@ Contributors: quicoto
 Tags: ratings, thumbs, votes, AJAX, rating, thumb, vote, page, post
 Requires at least: 3.6
 Tested up to: 3.9
-Stable tag: 1.7.3
+Stable tag: 1.7.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -19,9 +19,9 @@ The output is very basic, no images, no fonts, no fancy CSS. Customize the ouput
 
 = Features =
 
+*   No output printed by default, __check the Installation instructions__.
 *   Stores the votes values for each content.
 *   Uses HTML5 LocalStorage to prevent the users from voting twice.
-*   No output printed by default, check the Installation instructions.
 *   Easy to customize the output using CSS.
 *   Show the most voted (positive/negative) items using shortcodes.
 
@@ -52,7 +52,7 @@ Are you using the plugin? Do you like it? Do you hate it? Let me know!
 
 First of all activate the Plugin, then:
 
-A) If you want to show the thumbs after your content (posts, pages, custom post types) paste this snippet at the end of your __functions.php__ file of your theme:
+A) If you want to show the thumbs after all your content (posts, pages, custom post types) paste this snippet at the end of your __functions.php__ file of your theme:
 
 `function thumbs_rating_print($content)
 {
@@ -60,21 +60,19 @@ A) If you want to show the thumbs after your content (posts, pages, custom post 
 }
 add_filter('the_content', 'thumbs_rating_print');`
 
-B) Alternatively you can print the Thumbs in certain parts of your theme. Paste the following snippet wherever you want it to show:
+B) Alternatively you can print the buttons only in certain parts of your theme. Paste the following snippet wherever you want them to show:
 
 `<?=function_exists('thumbs_rating_getlink') ? thumbs_rating_getlink() : ''?>`
 
-__NOTE__: If you don't want to mess with php files you can use the [Code Snippets](http://wordpress.org/plugins/code-snippets/) plugin (or similar) which allows you to make these changes from within the WordPress Admin without editing your functions.php file.
-
 == Frequently Asked Questions ==
 
-= I activated the plugin and nothing happens =
+= I activated the plugin and I don't see the buttons =
 
-You must specify where do you want to show the thumbs within your theme, check out the Installation instructions.
+You must specify where do you want to show the thumbs within your theme, __check out the Installation instructions__.
 
 = Can I customize the colors? =
 
-Absolutely. Check out the CSS within the plugin (__thumbs-rating/css/style.css__) and override the classes from your theme __style.css__ file.
+Absolutely. Check out the CSS within the plugin (__thumbs-rating/css/style.css__) and override the classes from your theme's __style.css__ file.
 
 = When I sort the admin columns some posts disappear =
 
@@ -116,6 +114,9 @@ You might need to allow shortcodes in that sections, [here's how](http://php.qui
 2. This text is shown if you try to vote again.
 
 == Changelog ==
+
+= 1.7.4 =
+* Fixed bug with the class .thumbs-rating-voted not being added to the buttons if the count was more than 0.
 
 = 1.7.3 =
 * Fixed bug with the shortcode ordering.
@@ -160,6 +161,9 @@ You might need to allow shortcodes in that sections, [here's how](http://php.qui
 * First release.
 
 == Upgrade Notice ==
+
+= 1.7.4 =
+* Small tiny bug, feel free to upgrade nothing should break.
 
 = 1.7.3 =
 * Fixed bug with the shortcode ordering.

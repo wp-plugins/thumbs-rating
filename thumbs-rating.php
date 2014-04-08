@@ -4,7 +4,7 @@ Plugin Name: Thumbs Rating
 Plugin URI: http://wordpress.org/plugins/thumbs-rating/
 Description: Add thumbs up/down rating to your content.
 Author: Ricard Torres
-Version: 1.7.3
+Version: 1.7.4
 Author URI: http://php.quicoto.com/
 */
 
@@ -88,8 +88,10 @@ if  ( ! function_exists( 'thumbs_rating_getlink' ) ):
 		
 		$thumbs_rating_up_count = get_post_meta($post_ID, '_thumbs_rating_up', true) != '' ? get_post_meta($post_ID, '_thumbs_rating_up', true) : '0';
 		$thumbs_rating_down_count = get_post_meta($post_ID, '_thumbs_rating_down', true) != '' ? get_post_meta($post_ID, '_thumbs_rating_down', true) : '0';
-		$link_up = '<span class="thumbs-rating-up'. ( (isset($type_of_vote) && ($type_of_vote == 1) ) ? ' thumbs-rating-voted' : '' ) .'" onclick="thumbs_rating_vote(' . $post_ID . ', 1);" data-text="' . __('Vote Up','thumbs-rating') . '"> +' . $thumbs_rating_up_count . '</span>';
-		$link_down = '<span class="thumbs-rating-down'. ( (isset($type_of_vote) && ($type_of_vote == 2) ) ? ' thumbs-rating-voted' : '' ) .'" onclick="thumbs_rating_vote(' . $post_ID . ', 2);" data-text="' . __('Vote Down','thumbs-rating') . '"> -' . $thumbs_rating_down_count . '</span>';
+		
+		$link_up = '<span class="thumbs-rating-up'. ( (isset($thumbs_rating_up_count) && intval($thumbs_rating_up_count) > 0 ) ? ' thumbs-rating-voted' : '' ) .'" onclick="thumbs_rating_vote(' . $post_ID . ', 1);" data-text="' . __('Vote Up','thumbs-rating') . '"> +' . $thumbs_rating_up_count . '</span>';
+		$link_down = '<span class="thumbs-rating-down'. ( (isset($thumbs_rating_down_count) && intval($thumbs_rating_down_count) > 0 ) ? ' thumbs-rating-voted' : '' ) .'" onclick="thumbs_rating_vote(' . $post_ID . ', 2);" data-text="' . __('Vote Down','thumbs-rating') . '"> -' . $thumbs_rating_down_count . '</span>';
+		
 		$thumbs_rating_link = '<div  class="thumbs-rating-container" id="thumbs-rating-'.$post_ID.'" data-content-id="'.$post_ID.'">';
 		$thumbs_rating_link .= $link_up;
 		$thumbs_rating_link .= ' ';
