@@ -3,7 +3,7 @@ Contributors: quicoto
 Tags: ratings, thumbs, votes, AJAX, rating, thumb, vote, page, post
 Requires at least: 3.6
 Tested up to: 3.9
-Stable tag: 1.7.4
+Stable tag: 1.7.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -34,6 +34,7 @@ The output is very basic, no images, no fonts, no fancy CSS. Customize the ouput
 * 	German: de_DE (by [webserviceXXL](http://profiles.wordpress.org/hvbx/))
 *	Persian: fa_IR (by [Hamed.T](http://wordpress.org/support/profile/hamedt))
 *	Russian: ru_RU (by [anatolt](http://wordpress.org/support/profile/anatolt))
+*	French: fr_FR by Arnaud
 
 Give me a hand and translate the plugin in your language, it's just a few words.
 
@@ -115,6 +116,9 @@ You might need to allow shortcodes in that sections, [here's how](http://php.qui
 
 == Changelog ==
 
+= 1.7.5 =
+* Added French (fr_FR) translations by Arnaud.
+
 = 1.7.4 =
 * Fixed bug with the class .thumbs-rating-voted not being added to the buttons if the count was more than 0.
 
@@ -161,6 +165,9 @@ You might need to allow shortcodes in that sections, [here's how](http://php.qui
 * First release.
 
 == Upgrade Notice ==
+
+= 1.7.5 =
+* Added French (fr_FR) translations by Arnaud.
 
 = 1.7.4 =
 * Small tiny bug, feel free to upgrade nothing should break.
