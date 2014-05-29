@@ -3,7 +3,7 @@ Contributors: quicoto
 Tags: ratings, thumbs, votes, AJAX, rating, thumb, vote, page, post
 Requires at least: 3.6
 Tested up to: 3.9
-Stable tag: 1.7.6
+Stable tag: 1.7.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -27,15 +27,17 @@ The output is very basic, no images, no fonts, no fancy CSS. Customize the ouput
 
 = Languages =
 
-*	English
-*	Spanish: es_ES
+
 *	Catalan: ca
 * 	Czech: cs_CZ (by [togur](http://wordpress.org/support/profile/togur/))
+*   Dutch nl_NL (by [Thijs](http://wordpress.org/support/profile/thijsku))
+*	English
+*	French: fr_FR by Arnaud
 * 	German: de_DE (by [webserviceXXL](http://profiles.wordpress.org/hvbx/))
 *	Persian: fa_IR (by [Hamed.T](http://wordpress.org/support/profile/hamedt))
-*	Russian: ru_RU (by [anatolt](http://wordpress.org/support/profile/anatolt))
-*	French: fr_FR by Arnaud
 *	Romanian: ro_RO by (by [AlexCruz1989](https://wordpress.org/support/profile/alexcruz1989))
+*	Russian: ru_RU (by [anatolt](http://wordpress.org/support/profile/anatolt))
+*	Spanish: es_ES
 
 Give me a hand and translate the plugin in your language, it's just a few words.
 
@@ -117,6 +119,9 @@ You might need to allow shortcodes in that sections, [here's how](http://php.qui
 
 == Changelog ==
 
+= 1.7.7 =
+* Added Dutch (nl_NL) translations by Thijs.
+
 = 1.7.6 =
 * Added Romanian (ro_RO) translations by AlexCruz1989.
 
@@ -169,6 +174,9 @@ You might need to allow shortcodes in that sections, [here's how](http://php.qui
 * First release.
 
 == Upgrade Notice ==
+
+= 1.7.7 =
+* Added Dutch (nl_NL) translations by Thijs.
 
 = 1.7.6 =
 * Added Romanian (ro_RO) translations by AlexCruz1989.
