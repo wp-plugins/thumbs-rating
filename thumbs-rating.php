@@ -4,7 +4,7 @@ Plugin Name: Thumbs Rating
 Plugin URI: http://wordpress.org/plugins/thumbs-rating/
 Description: Add thumbs up/down rating to your content.
 Author: Ricard Torres
-Version: 1.7.7
+Version: 1.8
 Author URI: http://php.quicoto.com/
 */
 
@@ -45,7 +45,7 @@ if  ( ! function_exists( 'thumbs_rating_scripts' ) ):
 	function thumbs_rating_scripts()
 	{
 		wp_enqueue_script('thumbs_rating_scripts', thumbs_rating_url . '/js/general.js', array('jquery'), '4.0.1');
-		wp_localize_script( 'thumbs_rating_scripts', 'thumbs_rating_ajax', array( 'ajax_url' => admin_url( 'admin-ajax.php' ) ) );
+		wp_localize_script( 'thumbs_rating_scripts', 'thumbs_rating_ajax', array( 'ajax_url' => admin_url( 'admin-ajax.php' ), 'nonce' => wp_create_nonce( 'thumbs-rating-nonce' ) ) );
 	}
 	add_action('wp_enqueue_scripts', 'thumbs_rating_scripts');
 
@@ -131,6 +131,9 @@ if  ( ! function_exists( 'thumbs_rating_add_vote_callback' ) ):
 
 	function thumbs_rating_add_vote_callback()
 	{
+		
+		// Check the nonce - security
+		check_ajax_referer( 'thumbs-rating-nonce', 'nonce' );
 	
 		global $wpdb;
 		

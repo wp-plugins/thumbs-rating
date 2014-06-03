@@ -3,7 +3,7 @@ Contributors: quicoto
 Tags: ratings, thumbs, votes, AJAX, rating, thumb, vote, page, post
 Requires at least: 3.6
 Tested up to: 3.9
-Stable tag: 1.7.7
+Stable tag: 1.8
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -34,6 +34,7 @@ The output is very basic, no images, no fonts, no fancy CSS. Customize the ouput
 *	English
 *	French: fr_FR by Arnaud
 * 	German: de_DE (by [webserviceXXL](http://profiles.wordpress.org/hvbx/))
+* 	Japanese: ja by heySister721
 *	Persian: fa_IR (by [Hamed.T](http://wordpress.org/support/profile/hamedt))
 *	Romanian: ro_RO by (by [AlexCruz1989](https://wordpress.org/support/profile/alexcruz1989))
 *	Russian: ru_RU (by [anatolt](http://wordpress.org/support/profile/anatolt))
@@ -119,6 +120,11 @@ You might need to allow shortcodes in that sections, [here's how](http://php.qui
 
 == Changelog ==
 
+
+= 1.8 =
+* Improved the security, checking the ajax referer, props @frankiet
+* Added Japanese (ja) translations by heySister721.
+
 = 1.7.7 =
 * Added Dutch (nl_NL) translations by Thijs.
 
@@ -174,6 +180,9 @@ You might need to allow shortcodes in that sections, [here's how](http://php.qui
 * First release.
 
 == Upgrade Notice ==
+
+= 1.8 =
+* Security and Japanese translations.
 
 = 1.7.7 =
 * Added Dutch (nl_NL) translations by Thijs.

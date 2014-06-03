@@ -24,7 +24,8 @@ function thumbs_rating_vote(ID, type)
 		var data = {
 			action: 'thumbs_rating_add_vote',
 			postid: ID,
-			type: type
+			type: type,
+			nonce: thumbs_rating_ajax.nonce
 		};
 			
 		jQuery.post(thumbs_rating_ajax.ajax_url, data, function(response) {			
