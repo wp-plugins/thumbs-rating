@@ -1,9 +1,9 @@
 === Thumbs Rating ===
 Contributors: quicoto
 Tags: ratings, thumbs, votes, AJAX, rating, thumb, vote, page, post
-Requires at least: 3.6
-Tested up to: 3.9
-Stable tag: 1.8
+Requires at least: 3.8
+Tested up to: 4.0
+Stable tag: 1.9
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -24,6 +24,7 @@ The output is very basic, no images, no fonts, no fancy CSS. Customize the ouput
 *   Uses HTML5 LocalStorage to prevent the users from voting twice.
 *   Easy to customize the output using CSS.
 *   Show the most voted (positive/negative) items using shortcodes.
+*   Show the buttons using shortcodes.
 
 = Languages =
 
@@ -57,7 +58,12 @@ Are you using the plugin? Do you like it? Do you hate it? Let me know!
 
 First of all activate the Plugin, then:
 
-A) If you want to show the thumbs after all your content (posts, pages, custom post types) paste this snippet at the end of your __functions.php__ file of your theme:
+A) Add the shortcode to the posts or pages you want the Thumb Rating buttons to appear:
+
+`[thumbs-rating-buttons]`
+
+
+B) If you want to show the thumbs after all your content (posts, pages, custom post types) paste this snippet at the end of your __functions.php__ file of your theme:
 
 `function thumbs_rating_print($content)
 {
@@ -65,7 +71,7 @@ A) If you want to show the thumbs after all your content (posts, pages, custom p
 }
 add_filter('the_content', 'thumbs_rating_print');`
 
-B) Alternatively you can print the buttons only in certain parts of your theme. Paste the following snippet wherever you want them to show:
+C) Alternatively you can print the buttons only in certain parts of your theme. Paste the following snippet wherever you want them to show:
 
 `<?=function_exists('thumbs_rating_getlink') ? thumbs_rating_getlink() : ''?>`
 
@@ -120,6 +126,8 @@ You might need to allow shortcodes in that sections, [here's how](http://php.qui
 
 == Changelog ==
 
+= 1.9 =
+* New shortcode to show the buttons inside posts and pages.
 
 = 1.8 =
 * Improved the security, checking the ajax referer, props @frankiet
@@ -180,6 +188,9 @@ You might need to allow shortcodes in that sections, [here's how](http://php.qui
 * First release.
 
 == Upgrade Notice ==
+
+= 1.9 =
+* New shortcode to show the buttons inside posts and pages.
 
 = 1.8 =
 * Security and Japanese translations.
