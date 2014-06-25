@@ -38,6 +38,7 @@ The output is very basic, no images, no fonts, no fancy CSS. Customize the ouput
 * 	Japanese: ja by heySister721
 *	Lithuanian: lt_LT by Andrius
 *	Persian: fa_IR (by [Hamed.T](http://wordpress.org/support/profile/hamedt))
+*	Portuguese: pt_BR by Felipe﻿
 *	Romanian: ro_RO by (by [AlexCruz1989](https://wordpress.org/support/profile/alexcruz1989))
 *	Russian: ru_RU (by [anatolt](http://wordpress.org/support/profile/anatolt))
 *	Spanish: es_ES
@@ -128,7 +129,7 @@ You might need to allow shortcodes in that sections, [here's how](http://php.qui
 == Changelog ==
 
 = 1.9.1 =
-* New language: Lithuanian (lt_LT)
+* New languages: Lithuanian (lt_LT) and Portuguese (pt_BR).
 
 = 1.9 =
 * New shortcode to show the buttons inside posts and pages.
@@ -194,7 +195,7 @@ You might need to allow shortcodes in that sections, [here's how](http://php.qui
 == Upgrade Notice ==
 
 = 1.9.1 =
-* New language: Lithuanian (lt_LT)
+* New languages: Lithuanian (lt_LT) and Portuguese (pt_BR).
 
 = 1.9 =
 * New shortcode to show the buttons inside posts and pages.
