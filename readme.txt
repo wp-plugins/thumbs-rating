@@ -3,7 +3,7 @@ Contributors: quicoto
 Tags: ratings, thumbs, votes, AJAX, rating, thumb, vote, page, post
 Requires at least: 3.8
 Tested up to: 4.0
-Stable tag: 1.9.1
+Stable tag: 2.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -128,8 +128,9 @@ You might need to allow shortcodes in that sections, [here's how](http://php.qui
 
 == Changelog ==
 
-= 1.9.1 =
+= 2.0 =
 * New languages: Lithuanian (lt_LT) and Portuguese (pt_BR).
+* Moved the + and - signs to the data attribute so they can be overwritten using css.
 
 = 1.9 =
 * New shortcode to show the buttons inside posts and pages.
@@ -194,8 +195,9 @@ You might need to allow shortcodes in that sections, [here's how](http://php.qui
 
 == Upgrade Notice ==
 
-= 1.9.1 =
+= 2.0 =
 * New languages: Lithuanian (lt_LT) and Portuguese (pt_BR).
+* Moved the + and - signs to the data attribute so they can be overwritten using css.
 
 = 1.9 =
 * New shortcode to show the buttons inside posts and pages.
