@@ -3,7 +3,7 @@ Contributors: quicoto
 Tags: ratings, thumbs, votes, AJAX, rating, thumb, vote, page, post
 Requires at least: 3.8
 Tested up to: 4.0
-Stable tag: 2.0
+Stable tag: 2.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -30,6 +30,7 @@ The output is very basic, no images, no fonts, no fancy CSS. Customize the ouput
 
 
 *	Catalan: ca
+*	Chinese (China): zh_CN (by [suifengtec](http://wordpress.org/support/profile/suifengtec))
 * 	Czech: cs_CZ (by [togur](http://wordpress.org/support/profile/togur/))
 *   Dutch nl_NL (by [Thijs](http://wordpress.org/support/profile/thijsku))
 *	English
@@ -128,6 +129,9 @@ You might need to allow shortcodes in that sections, [here's how](http://php.qui
 
 == Changelog ==
 
+= 2.1 =
+* New language: Chinese (China): zh_CN
+
 = 2.0 =
 * New languages: Lithuanian (lt_LT) and Portuguese (pt_BR).
 * Moved the + and - signs to the data attribute so they can be overwritten using css.
@@ -194,6 +198,9 @@ You might need to allow shortcodes in that sections, [here's how](http://php.qui
 * First release.
 
 == Upgrade Notice ==
+
+= 2.1 =
+* New language: Chinese (China): zh_CN
 
 = 2.0 =
 * New languages: Lithuanian (lt_LT) and Portuguese (pt_BR).
