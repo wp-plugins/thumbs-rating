@@ -3,7 +3,7 @@ Contributors: quicoto
 Tags: ratings, thumbs, votes, AJAX, rating, thumb, vote, page, post
 Requires at least: 3.8
 Tested up to: 4.0
-Stable tag: 2.1
+Stable tag: 2.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -40,6 +40,7 @@ The output is very basic, no images, no fonts, no fancy CSS. Customize the ouput
 *	Lithuanian: lt_LT by Andrius
 *	Persian: fa_IR (by [Hamed.T](http://wordpress.org/support/profile/hamedt))
 *	Portuguese: pt_BR by Felipe﻿
+*	Polish: pl_PL (by [Fafu](https://wordpress.org/support/profile/fafu))
 *	Romanian: ro_RO by (by [AlexCruz1989](https://wordpress.org/support/profile/alexcruz1989))
 *	Russian: ru_RU (by [anatolt](http://wordpress.org/support/profile/anatolt))
 *	Spanish: es_ES
@@ -55,7 +56,7 @@ Feel free to post a request but let's keep it simple and light.
 Are you using the plugin? Do you like it? Do you hate it? Let me know!
 
 * Twitter: [@ricard_dev](http://twitter.com/ricard_dev)
-* Blog: [Rick's code](http://php.quicoto.com/) 
+* Blog: [Rick's code](http://php.quicoto.com/)
 
 == Installation ==
 
@@ -129,6 +130,9 @@ You might need to allow shortcodes in that sections, [here's how](http://php.qui
 
 == Changelog ==
 
+= 2.2 =
+* New language: Polish: pl_PL
+
 = 2.1 =
 * New language: Chinese (China): zh_CN
 
@@ -198,6 +202,9 @@ You might need to allow shortcodes in that sections, [here's how](http://php.qui
 * First release.
 
 == Upgrade Notice ==
+
+= 2.2 =
+* New language: Polish: pl_PL
 
 = 2.1 =
 * New language: Chinese (China): zh_CN
