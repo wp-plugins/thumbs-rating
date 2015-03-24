@@ -3,7 +3,7 @@ Contributors: quicoto
 Tags: ratings, thumbs, votes, AJAX, rating, thumb, vote, page, post
 Requires at least: 4.0
 Tested up to: 4.2
-Stable tag: 2.2
+Stable tag: 2.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -130,6 +130,9 @@ You might need to allow shortcodes in that sections, [here's how](http://php.qui
 
 == Changelog ==
 
+= 2.3 =
+* Change constant to properly use HTTPS, props @tripflex
+
 = 2.2 =
 * New language: Polish: pl_PL
 
@@ -202,6 +205,9 @@ You might need to allow shortcodes in that sections, [here's how](http://php.qui
 * First release.
 
 == Upgrade Notice ==
+
+= 2.3 =
+* Properly use of HTTPS, if your site uses it.
 
 = 2.2 =
 * New language: Polish: pl_PL

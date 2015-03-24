@@ -4,7 +4,7 @@ Plugin Name: Thumbs Rating
 Plugin URI: http://wordpress.org/plugins/thumbs-rating/
 Description: Add thumbs up/down rating to your content.
 Author: Ricard Torres
-Version: 2.2
+Version: 2.3
 Author URI: http://php.quicoto.com/
 */
 
@@ -14,7 +14,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 /* Define the URL and DIR path */
 /*-----------------------------------------------------------------------------------*/
 
-define('thumbs_rating_url', WP_PLUGIN_URL."/".dirname( plugin_basename( __FILE__ ) ) );
+define('thumbs_rating_url', plugins_url() ."/".dirname( plugin_basename( __FILE__ ) ) );
 define('thumbs_rating_path', WP_PLUGIN_DIR."/".dirname( plugin_basename( __FILE__ ) ) );
 
 
