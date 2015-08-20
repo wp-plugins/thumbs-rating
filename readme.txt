@@ -1,9 +1,9 @@
 === Thumbs Rating ===
 Contributors: quicoto
 Tags: ratings, thumbs, votes, AJAX, rating, thumb, vote, page, post
-Requires at least: 4.0
-Tested up to: 4.2
-Stable tag: 2.4
+Requires at least: 4.1
+Tested up to: 4.3
+Stable tag: 2.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -45,6 +45,7 @@ The output is very basic, no images, no fonts, no fancy CSS. Customize the ouput
 *	Russian: ru_RU (by [anatolt](http://wordpress.org/support/profile/anatolt))
 *	Serbian: sr_RS (by Andrijana Nikolic)
 *	Spanish: es_ES
+*	Turkish: tr_TR (by [CrimsonIdol](https://profiles.wordpress.org/CrimsonIdol/))
 
 Give me a hand and translate the plugin in your language, it's just a few words.
 
@@ -131,6 +132,9 @@ You might need to allow shortcodes in that sections, [here's how](http://php.qui
 
 == Changelog ==
 
+= 2.5 =
+* Added Turkish (tr_TR) translations.
+
 = 2.4 =
 * New translation: Serbian (sr_RS)
 
@@ -209,6 +213,9 @@ You might need to allow shortcodes in that sections, [here's how](http://php.qui
 * First release.
 
 == Upgrade Notice ==
+
+= 2.5 =
+* Added Turkish (tr_TR) translations.
 
 = 2.4 =
 * Added Serbian (sr_RS) translations.
